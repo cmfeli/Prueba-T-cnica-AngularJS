@@ -24,8 +24,7 @@ _No requiere de la descarga de librerías externas debido a que todos están sie
 
 ## Ejecución de pruebas
 
-_Las pruebas a realiza consiste en la búsqueda de películas y añadir las mismas a favoritos. Es importante comprobar el funcionamiento 
-estando logueado y no logueado. La diferencia radica en que si no estamos logueados, no podremos gestionar favoritos._
+_Las pruebas a realiza consiste en la búsqueda de películas y añadir las mismas a favoritos. Es importante comprobar el funcionamiento estando logueado y no logueado. La diferencia radica en que si no estamos logueados, no podremos gestionar favoritos._
 
 _Nota: para facilitar estas pruebas el login sólo especifica un nombre de usuario el cual además no es comparado con ningún valor._
 
@@ -52,7 +51,5 @@ Fontawesome v5.6.3
 
 ### Alternativas estudiadas
 
-_1. Posibilidad de cambiar el uso de sessionStorage por las cookies de AngularJS, modificando para ello la declaración del módulo y del
-controlador. Además esta posibilidad permite mantener la sesion durante un tiempo indicado._
-_2. Posibilidad de en lugar permitir al usuario escribir el nombre de la película, realizar peticiones mediante un array de un grupo de
-películas dadas y mostrarlas haciendo uso de ng-repeat con filtros y ordenaciones.
+_1. Posibilidad de cambiar el uso de sessionStorage por las cookies de AngularJS, modificando para ello la declaración del módulo y del controlador. Además esta posibilidad permite mantener la sesion durante un tiempo indicado._
+_2. Posibilidad de en lugar permitir al usuario escribir el nombre de la película, realizar peticiones mediante un array de un grupo de películas dadas y mostrarlas haciendo uso de ng-repeat con filtros y ordenaciones.
