@@ -52,4 +52,5 @@ Fontawesome v5.6.3
 ### Alternativas estudiadas
 
 _1. Posibilidad de cambiar el uso de sessionStorage por las cookies de AngularJS, modificando para ello la declaración del módulo y del controlador. Además esta posibilidad permite mantener la sesion durante un tiempo indicado._
-_2. Posibilidad de en lugar permitir al usuario escribir el nombre de la película, realizar peticiones mediante un array de un grupo de películas dadas y mostrarlas haciendo uso de ng-repeat con filtros y ordenaciones.
+
+_2. Posibilidad de en lugar permitir al usuario escribir el nombre de la película, realizar peticiones mediante un array de un grupo de películas dadas y mostrarlas haciendo uso de ng-repeat con filtros y ordenaciones._
