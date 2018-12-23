@@ -1,0 +1,12 @@
+.alert {
+	display: 	none;
+	position: 	fixed;
+	top: 		60px;
+	left: 		50%;
+	transform: 	translate(-50%, 0);
+	z-index:    2;
+}
+
+#contenedor-principal {
+	margin-top: 120px;
+}

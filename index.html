@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<!-- METAS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<!-- CUSTOM JS -->
+		<script src="js.js"></script>
+		<!-- CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+		<!-- CUSTOM CSS -->
+		<link rel="stylesheet" href="css.css">
+	</head>
+
+
+
+	<body ng-controller="controlador">
+		<!-- NABVAR -->
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbar">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link">Videoclub</a>
+					</li>
+				</ul>
+				<form class="form-inline" ng-hide="nombreUsuario">
+					<input type="text" class="form-control mr-sm-2" placeholder="Usuario" ng-model="nombreUsuarioLogin">
+					<button class="btn btn-outline-warning my-2 my-sm-0" ng-click="enviarLogin()">Login</button>
+				</form>
+				<div id="image-holder" ng-show="nombreUsuario">
+					<span class="text-warning mr-sm-2"><i class="far fa-user text-warning mr-sm-2"></i>{{nombreUsuario}}</span>
+					<button class="btn btn-outline-warning my-2 my-sm-0" ng-click="cerrarSesion()">Cerrar sesión</button>
+				</div>
+			</div>
+		</nav>
+		<!-- FIN NABVAR -->
+
+		<!-- CONTENIDO PRINCIPAL -->
+		<div id="contenedor-principal" class="container">
+			<!-- BUSQUEDA PELICULAS -->
+			<div class="row justify-content-md-center m-5" >
+				<div class="col col-md-2">
+				</div>
+				<div class="col col-md-8">
+					<input type="text" class="form-control" placeholder="Buscar" ng-model="tituloBuscar">
+				</div>
+				<div class="col col-md-2">
+					<button class="btn btn-dark" ng-click="recuperarPelicula()"><i class="fas fa-search text-white mr-sm-2"></i>Buscar</button>
+				</div>
+			</div>
+			<!-- FIN BUSQUEDA PELICULAS -->
+			<!-- CONTENIDO PELICULAS -->
+			<div class="row" ng-if="descripcion">
+				<div class="col col-md-4">
+					<img class="w-100" ng-src="{{imagen}}"/>
+				</div>
+				<div class="col col-md-8">
+					<div class="row">
+						<div class="col col-auto">
+							<h1>{{titulo}}</h1>
+						</div>
+						<div class="col" ng-show="fav">
+							<a href="" data-toggle="popover" data-trigger="hover" data-content="Añadir película a favorito">
+								<i class="far fa-star text-secondary float-right fa-2x m-2" ng-click="favorito()" ></i>
+							</a>
+						</div>
+						<div class="col" ng-hide="fav">
+							<a href="" data-toggle="popover" data-trigger="hover" data-content="Eliminar película de favorito">
+								<i class="fas fa-star text-warning float-right fa-2x m-2" ng-click="favorito()"></i>
+							</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col col-auto">
+							Año: {{ano}}<br>
+							Director: {{director}}<br>
+							País: {{pais}}
+						</div>
+					</div>
+					<div class="row">
+						<p class="m-3 text-justify">{{descripcion}}</p>
+					</div>
+				</div>
+			</div>
+			<!-- FIN CONTENIDO PELICULAS -->
+		</div>
+		<!-- FIN CONTENIDO PRINCIPAL -->
+
+
+
+		<!-- ALERTAS -->
+		<div id="no-login-alert" class="alert alert-primary fade show" role="alert">
+			Inicie sesión para gestionar los favoritos.
+		</div>
+		<div id="no-pelicula-alert" class="alert alert-warning fade show" role="alert">
+			No se encontró la película indicada.
+		</div>
+		<div id="error-alert" class="alert alert-danger fade show" role="alert">
+			Error en la conexión.
+		</div>
+		<!-- FIN ALERTAS -->
+	</body>
+</html>
